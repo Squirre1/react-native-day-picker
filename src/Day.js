@@ -46,7 +46,7 @@ export default class Day extends React.Component {
 		return (
 			<TouchableOpacity
 				activeOpacity={disabled ? 1 : 0.5}
-				style={[styles.common, {backgroundColor: backColor, width: width / 7, height: width / 7}]}
+				style={[styles.common, {backgroundColor: backColor, width: width / 7, height: width / 6}]}
 				onPress={onPress}>
 				<Text style={{color: textColor}}>{date.getDate()}</Text>
 			</TouchableOpacity>
