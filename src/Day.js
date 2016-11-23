@@ -4,8 +4,11 @@ import React    from 'react';
 import {
 	StyleSheet,
 	TouchableOpacity,
-	Text
+	Text,
+	Dimensions,
 }               from 'react-native';
+
+const { height } = Dimensions.get('window');
 
 export default class Day extends React.Component {
 	render() {
@@ -46,7 +49,7 @@ export default class Day extends React.Component {
 		return (
 			<TouchableOpacity
 				activeOpacity={disabled ? 1 : 0.5}
-				style={[styles.common, {backgroundColor: backColor, width: width / 7, height: width / 7}]}
+				style={[styles.common, {backgroundColor: backColor, width: width / 7, height: height / 10.7}]}
 				onPress={onPress}>
 				<Text style={{color: textColor}}>{date.getDate()}</Text>
 			</TouchableOpacity>
