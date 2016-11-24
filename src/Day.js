@@ -14,8 +14,10 @@ export default class Day extends React.Component {
 	render() {
 		let {date, status, disabled, onDayPress, width} = this.props;
 		let onPress, textColor, backColor;
+		let now = new Date();
+		now.setHours(0, 0, 0, 0);
 
-		if (disabled) {
+		if (disabled || date.valueOf() <= now.valueOf()) {
 			status = 'disabled';
 			onPress = null;
 		} else {
