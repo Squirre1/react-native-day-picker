@@ -248,8 +248,7 @@ export default class Calendar extends React.Component {
 
         return (
             <ListView
-                initialListSize={5}
-                scrollRenderAheadDistance={1200}
+                initialListSize={7}
                 style={[styles.listViewContainer, directionStyles, style]}
                 dataSource={this.state.dataSource}
                 renderRow={(month) => {
