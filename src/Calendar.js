@@ -98,7 +98,7 @@ export default class Calendar extends React.Component {
         var dataSource = new ListView.DataSource({rowHasChanged: this.rowHasChanged});
 
         this.state = {
-            dataSource: dataSource.cloneWithRows(this.months)
+            dataSource: dataSource.cloneWithRows(this.months.reverse())
         }
     }
 
@@ -240,15 +240,15 @@ export default class Calendar extends React.Component {
         let {style, isFutureDate} = this.props;
         let directionStyles = {};
 
-        if (!isFutureDate) {
+        /*if (!isFutureDate) {
             directionStyles = {
                 transform: [{scaleY: -1}]
             }
-        }
+        }*/
 
         return (
             <ListView
-                initialListSize={7}
+                initialListSize={1}
                 style={[styles.listViewContainer, directionStyles, style]}
                 dataSource={this.state.dataSource}
                 renderRow={(month) => {
